@@ -24,13 +24,17 @@ class HomePage extends StatelessWidget {
         children: [
           // Join Room Button - Top Left
           Positioned(
-            top: screenHeight * 0.5,
-            left: screenWidth * 0.5,
-            child: ElevatedButton(
-              onPressed: () {
-                // TODO: Join room logic
-              },
-              child: const Text("Join Room"),
+            top: screenHeight * 0.05,
+            left: screenWidth * 0.05,
+            child: SizedBox(
+              height: 50,
+              width: 200,
+              child: ElevatedButton(
+                onPressed: () {
+                  // TODO: Join room logic
+                },
+                child: const Text("Join Room"),
+              ),
             ),
           ),
 
@@ -52,7 +56,7 @@ class HomePage extends StatelessWidget {
               width: screenWidth * 0.6,
               height: screenHeight * 0.4,
               child: Lottie.asset(
-                'assets/astronaut_music.lottie', // Replace with your animation file
+                './assets/Happy_Spaceman.json', // Replace with your animation file
                 fit: BoxFit.contain,
               ),
             ),
