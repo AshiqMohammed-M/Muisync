@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:muisync/Homepage/logic.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,8 +19,8 @@ class HomePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
-                    "Good Afternoon",
+                  Text(
+                    getGreetings(),
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
