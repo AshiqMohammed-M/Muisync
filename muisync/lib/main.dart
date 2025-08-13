@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muisync/Homepage/homepage2.dart';
+import 'package:muisync/pages/homepage2.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:muisync/Homepage/logic.dart';
+import 'package:muisync/pages/logic.dart';
 
 
 class HomePage extends StatelessWidget {
