@@ -1,6 +1,8 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:muisync/pages/logic.dart';
+import 'package:dark_light_button/dark_light_button.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -9,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,8 +30,18 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Row(
-                    children: const [
-                      Icon(Icons.sentiment_dissatisfied, color: Colors.red),
+                    children: [
+                          DarlightButton(
+                          type: Darlights.DarlightTwo,
+                            onChange: (ThemeMode theme) {
+                            if (theme == ThemeMode.dark) {
+                        AdaptiveTheme.of(context).setDark();
+                      } else {
+                        AdaptiveTheme.of(context).setLight();
+                      }
+                          },
+                          options: DarlightTwoOption()
+                        ),
                       SizedBox(width: 16),
                       Icon(Icons.settings, color: Colors.white),
                     ],
