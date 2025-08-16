@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +42,7 @@ class HomePage extends StatelessWidget {
                           options: DarlightTwoOption()
                         ),
                       SizedBox(width: 16),
-                      Icon(Icons.settings, color: Colors.white),
+                      Icon(Icons.settings, color: Colors.white),  //Settings
                     ],
                   ),
                 ],
