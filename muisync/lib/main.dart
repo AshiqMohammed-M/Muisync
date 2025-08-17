@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muisync/pages/homepage2.dart';
+import 'package:muisync/pages/homepage.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
 void main() async {
