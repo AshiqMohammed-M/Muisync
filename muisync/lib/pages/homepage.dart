@@ -1,9 +1,7 @@
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:muisync/pages/logic.dart';
 import 'package:dark_light_button/dark_light_button.dart';
-import 'package:muisync/pages/settings.dart'; 
 
 
 class HomePage extends StatelessWidget {
@@ -12,46 +10,44 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueGrey[900],
-        title: Text(
-          getGreetings(),
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          DarlightButton(
-            type: Darlights.DarlightTwo,
-            onChange: (ThemeMode theme) {
-              if (theme == ThemeMode.dark) {
-                AdaptiveTheme.of(context).setDark();
-              } else {
-                AdaptiveTheme.of(context).setLight();
-              }
-            },
-            options: DarlightTwoOption(),
-          ),
-          const SizedBox(width: 8),
-          IconButton(
-            icon: const Icon(Icons.settings, color: Colors.white),
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const Settings(),
-                ),
-              );
-            },
-          ),
-        ],
-      ),
+      // backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    getGreetings(),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                          DarlightButton(
+                          type: Darlights.DarlightTwo,
+                            onChange: (ThemeMode theme) {
+                            if (theme == ThemeMode.dark) {
+                        AdaptiveTheme.of(context).setDark();
+                      } else {
+                        AdaptiveTheme.of(context).setLight();
+                      }
+                          },
+                          options: DarlightTwoOption()
+                        ),
+                      SizedBox(width: 16),
+                      Icon(Icons.settings, color: Colors.white),
+                    ],
+                  ),
+                ],
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(

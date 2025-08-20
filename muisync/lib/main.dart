@@ -1,31 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:muisync/pages/homepage.dart';
+import 'package:muisync/pages/homepage2.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final savedThemeMode = await AdaptiveTheme.getThemeMode();
-  runApp(MyApp(savedThemeMode: savedThemeMode));
+void main() {
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final AdaptiveThemeMode? savedThemeMode;
-
-  const MyApp({super.key, this.savedThemeMode});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return AdaptiveTheme(
-      light: ThemeData.light(useMaterial3: true),
-      dark: ThemeData.dark(useMaterial3: true),
-      initial: savedThemeMode ?? AdaptiveThemeMode.light,
-      builder: (theme, darkTheme) => MaterialApp(
-        title: 'Muisync',
-        theme: theme,
-        darkTheme: darkTheme,
-        debugShowCheckedModeBanner: false,
-        home: HomePage(),
-      ),
-    );
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+      );
   }
 }
