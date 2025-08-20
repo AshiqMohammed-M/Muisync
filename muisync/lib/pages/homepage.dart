@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:muisync/pages/logic.dart';
-import 'package:dark_light_button/dark_light_button.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -28,23 +27,7 @@ class HomePage extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Row(
-                    children: [
-                          DarlightButton(
-                          type: Darlights.DarlightTwo,
-                            onChange: (ThemeMode theme) {
-                            if (theme == ThemeMode.dark) {
-                        AdaptiveTheme.of(context).setDark();
-                      } else {
-                        AdaptiveTheme.of(context).setLight();
-                      }
-                          },
-                          options: DarlightTwoOption()
-                        ),
-                      SizedBox(width: 16),
-                      Icon(Icons.settings, color: Colors.white),
-                    ],
-                  ),
+                  Row(children: [Icon(Icons.settings, color: Colors.white)]),
                 ],
               ),
             ),

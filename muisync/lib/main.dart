@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:muisync/pages/homepage2.dart';
-import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:muisync/pages/homepage.dart';
+
 
 void main() {
   runApp(const MyApp());
